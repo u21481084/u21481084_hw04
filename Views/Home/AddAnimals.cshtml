@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "AddAnimals";
+}
+
+<section class="showcase">
+    <div class="container" style="z-index:10; background-color:aliceblue; opacity:0.7;" id="xqc">
+        <h2>Add Animals</h2>
+        <div class="container">
+
+            @using (Html.BeginForm("AddAnimals", "Home", FormMethod.Post))
+            {
+                <form class="col-6">
+                    <div class="form-control">
+                        <label for="id" id="addanimals">Enter Animal ID</label>
+                        <input type="text" name="id" id="id" />
+                    </div>
+                    <div class="form-control">
+                        <label for="type" id="addanimals">Select Animal type</label>
+                        <select name="type" id="type">
+                            <option value="Mammals">Mammals</option>
+                            <option value="Fish">Fish</option>
+                            <option value="Reptiles">Reptiles</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label for="animalname" id="addanimals">Enter Animal Name</label>
+                        <input type="text" name="animalname" id="animalname" />
+                    </div>
+                    <div class="form-control">
+                        <label for="hab" id="addanimals">Enter Animal Habitat</label>
+                        <input type="text" name="hab" id="hab" />
+                    </div>
+                    <div class="form-control">
+                        <label for="food" id="addanimals">Enter Animal Diet</label>
+                        <input type="text" name="food" id="food" />
+                    </div>
+                    <div class="form-control">
+                        <label for="x" id="addanimals">Number of animals</label>
+                        <input type="number" name="x" id="x" />
+                    </div>
+                    <div class="form-control">
+                        <label for="status" id="addanimals">Enter Animal Status</label>
+                        <input type="text" name="status" id="status" />
+                    </div>
+                    <br />
+                    <div>
+                        <button type="submit" class="name noselect">Add Animal</button>
+
+                    </div>
+                </form>
+            }
+
+        </div>
+    </div>
+    <video class="vidbg" src="~/Video/Aq1.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+</section>
+

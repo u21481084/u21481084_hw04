@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Pollution";
+}
+<section class="showcase">
+    <video class="vidbg" src="~/Video/Pollution.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+</section>
+
+<main class="container">
+    <section class="card" data-aos="fade-left">
+        <img src="https://maui.hawaii.edu/hooulu/wp-content/uploads/2018/04/1.jpeg" alt="" />
+        <div>
+            <h3>Ocean plastic pollution is a problem we can solve</h3>
+            <p>
+                Millions of tons of plastic trash litter our coastlines and ocean, from
+                the surface to the deep sea. Simply put, we are creating and using plastic at a much
+                faster rate than we can sustainably manage plastic waste. As a result, more and more plastic
+                is finding its way to the ocean, impacting ocean wildlife and ecosystems around the world.
+            </p>
+            
+        </div>
+        
+    </section>
+
+    <section class="card" data-aos="fade-right">
+        <img src="https://www.montereybayaquarium.org/globalassets/mba/images/conservation-topics/microplastics-iStock-1150805328.jpg?width=896&height=598&mode=crop&format=webp&quality=70" alt="" />
+        <div>
+            <h3>The Challenge</h3>
+            <p>
+                Plastic is everywhere. We eat and drink from it, make clothes from it and buy products wrapped in it. Once these things become trash, they don't just disappear.
+                Instead, they stick around for hundreds of years in landfills or, worse, in the natural environment.
+            </p>
+            @using (Html.BeginForm("PollutionProblem", "Home", FormMethod.Post))
+            {
+        <button type="submit" class="name noselect">Uncover the plastic problem</button>
+            }
+        </div>
+      
+    </section>
+
+    <section class="card" data-aos="fade-left">
+        <img src=" https://www.montereybayaquarium.org/globalassets/mba/images/restaurant-and-cafe/tr17-0812.jpg?width=896&height=598&mode=crop&format=webp&quality=70" alt="" />
+        <div>
+            <h3>What You Can Do</h3>
+            <p>
+                While the problem of plastic in the ocean may seem overwhelming, it is solvable. Each one of us can make a difference by using less single-use plastic in our everyday lives. We can also use our voices — and wallets — to support policies and businesses that are advancing solutions to the ocean plastic problem.
+            </p>
+            @using (Html.BeginForm("PollutionSol", "Home", FormMethod.Post))
+            {
+        <button class="name noselect" type="submit">Learn how to use less plastic</button>
+            }
+        </div>
+    </section>
+
+    
+</main>
+

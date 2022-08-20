@@ -1,0 +1,168 @@
+﻿@using HW04.Models;
+@{
+    ViewBag.Title = "Home Page";
+    var urlvid = "";
+    var Fact1 = "";
+    var Fact2 = "";
+    var Fact3 = "";
+    var sSciName = "";
+    var sHab = "";
+    var sSize = "";
+    var sDiet = "";
+    var sStatus = "";
+    var sCon = "";
+    var pFact = "";
+    var pSciName = "";
+    var pHab = "";
+    var pSize = "";
+    var pDiet = "";
+    var pStatus = "";
+    var pCon = "";
+    var bStatus = false;
+    var AniName = "";
+
+}
+<body>
+
+
+    <section class="showcase">
+        @foreach (var animal in Model)
+        {
+
+            AniName = animal.NameOfAnimal;
+            urlvid = animal.VideoUrl();
+            Fact1 = animal.Fact1();
+            Fact2 = animal.Fact2();
+            Fact3 = animal.Fact3();
+            sSciName = animal.GetSciName();
+            sHab = animal.GetHabitat();
+            sSize = animal.GetSize();
+            sDiet = animal.GetDiet();
+            bStatus = animal.HasStatus();
+            if (bStatus == true)
+            {
+                sStatus = animal.sStatus;
+                pStatus = animal.pStatus;
+
+            }
+            sCon = animal.Conservation();
+            pFact = animal.pFacts();
+            pSciName = animal.pSciName();
+            pHab = animal.pHab();
+            pSize = animal.pSize();
+            pDiet = animal.pDiet();
+            pCon = animal.pCon();
+
+        }
+
+        <video class="vidbg" src="~/Video/@urlvid" muted loop autoplay></video>
+        <div class="overlay"></div>
+    </section>
+    <main class="container">
+        <section class="card" data-aos="fade-left" style="opacity:0">
+            <img src="https://i.ibb.co/3NHjDcW/paint-2.png" alt="" />
+            <div>
+                <ul>
+                    @if (Fact1 != "")
+                    {
+                        <li>@Fact1</li>
+                    }
+                    @if (Fact2 != "")
+                    {
+                        <li>@Fact2</li>
+                    }
+                    @if (Fact3 != "")
+                    {
+                        <li>@Fact3</li>
+                    }
+                </ul>
+            </div>
+        </section>
+       
+        <section class="card" data-aos="fade-left">
+            <img src="~/Images/@pHab" alt="" />
+            <div>
+                <h3>Scientific Name</h3>
+                <p>
+                    @sSciName
+                </p>
+                <h3>Habitat</h3>
+                <p>
+                    @sHab
+                </p>
+               
+            </div>
+        </section>
+
+        <section class="card" data-aos="fade-left">
+            <img src="~/Images/@pSize" alt="" />
+            <div>
+                <h3>Size</h3>
+                <p>
+                    @sSize
+                </p>
+            </div>
+        </section>
+        <section class="card" data-aos="fade-left">
+            <img src="~/Images/@pDiet" alt="" />
+            <div>
+                <h3>Diet</h3>
+                <p>
+                    @sDiet
+                </p>
+            </div>
+        </section>
+        @if (bStatus == true)
+        {
+            <section class="card" data-aos="fade-left">
+                <img src="~/Images/@pStatus" alt="" />
+                <div>
+                    <h3>Status</h3>
+                    <p>
+                        @sStatus
+                    </p>
+                </div>
+            </section>
+
+        }
+        <section class="card" data-aos="fade-left">
+            <img src="~/Images/@pCon" alt="" />
+            <div>
+                <h3>Conservation</h3>
+                <p>
+                    @sCon
+                </p>
+            </div>
+        </section>
+
+
+
+
+        <section class="card" data-aos="fade-right">
+            <img src="~/Images/@pFact" alt="" />
+            <div>
+                <h3>Facts</h3>
+                <ul>
+                    @if (Fact1 != "")
+                    {
+                        <li>@Fact1</li>
+                    }
+                    @if (Fact2 != "")
+                    {
+                        <li>@Fact2</li>
+                    }
+                    @if (Fact3 != "")
+                    {
+                        <li>@Fact3</li>
+                    }
+                </ul>
+
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+</body>

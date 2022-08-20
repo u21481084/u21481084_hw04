@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "ClimateChange";
+}
+
+<section class="showcase">
+    <video class="vidbg" src="~/Video/ClimateChange.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+</section>
+
+<main class="container">
+    <section class="card" data-aos="fade-left">
+        <img src="https://chinadialogueocean.net/content/uploads/2021/01/china-dialogue-ocean-melting-ice-caps-polar-bears.jpg" alt="" />
+        <div>
+            <h3>The ocean is the heart of our planet’s climate system</h3>
+            <p>
+                From coral reefs to the deep sea, the ocean is feeling the effects of climate change. These impacts affect us too — 
+                through sea level rise, more intense storms and droughts and reduced seafood catches. But it's not too late. Working together, 
+                we can reduce our reliance on fossil fuels, slow climate change and adapt to the impacts already in motion.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="card" data-aos="fade-right">
+        <img src="https://www.montereybayaquarium.org/globalassets/mba/images/animals/marine-mammals/humpback-whale-095.jpg?width=896&height=598&mode=crop&format=webp&quality=70" alt="" />
+        <div>
+            <h3>The climate challenge</h3>
+            <p>
+                The ocean is bearing the brunt of our carbon emissions — absorbing much of the excess heat and carbon we emit, and 
+                quietly protecting us from even more extreme changes in our climate. But this vital service comes at a cost: 
+                Climate change is causing the ocean to become warmer, more acidic and depleted of oxygen. These changes put additional 
+                stress on marine wildlife, from zooplankton to whales, and threaten the well-being of human communities around the world.
+            </p>
+            @using (Html.BeginForm("ClimateSol", "Home", FormMethod.Post))
+            {
+                <button type="submit" class="name noselect">Get Facts About Climate Change</button>
+            }
+        </div>
+
+    </section>
+
+    <section class="card" data-aos="fade-left">
+        <img src="https://www.montereybayaquarium.org/globalassets/mba/images/buildings/exteriors/bikes-on-bike-rack-tr18-1088.jpg?width=896&height=598&mode=crop&format=webp&quality=70" alt="" />
+        <div>
+            <h3>What You Can Do</h3>
+            <p>
+                Climate change is a big issue, but when we get people working together in our communities, we’re capable of big solutions, too. 
+                Changes we make to reduce our own carbon footprints are a great start — but when we connect with others to work on solutions together,
+                we can build a more sustainable future for everyone. Here are some ideas for how to get involved.
+            </p>
+            @using (Html.BeginForm("ClimateSol", "Home", FormMethod.Post))
+            {
+                <button class="name noselect" type="submit">Take Climate Action</button>
+            }
+        </div>
+    </section>
+
+
+</main>

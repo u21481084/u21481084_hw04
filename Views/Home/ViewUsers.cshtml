@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HW04.Models.User>
+
+@{
+    ViewBag.Title = "ViewUsers";
+}
+<section class="showcase">
+    <div class="container" style="z-index:10; background-color:aliceblue; opacity:0.7;" id="xqc">
+        <h2>ViewUsers</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "AddUser")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumOfTickets)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rDate)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumOfTickets)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Home", new { id = item.UserID }, htmlAttributes: new { @class = "btn btn-primary" }) |
+
+                        @Html.ActionLink("Delete", "Delete", "Home", new { id = item.UserID }, htmlAttributes: new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <video class="vidbg" src="~/Video/Aq1.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+</section>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HW04.Models.AnimalRead>
+
+@{
+    ViewBag.Title = "ViewAnimalsDB";
+}
+<section class="showcase">
+    <div class="container" style="z-index:10; background-color:aliceblue; opacity:0.7;" id="xqc">
+        <h2>ViewAnimalsDB</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "AddAnimals")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnimalID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnimalHabitat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnimalFood)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnimalType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumAnimals)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sStatus)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalHabitat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalFood)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnimalType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumAnimals)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sStatus)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditAnimalDB", new { id = item.AnimalID }) |
+
+                        @Html.ActionLink("Delete", "RemoveAnimal", new { id = item.AnimalID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <video class="vidbg" src="~/Video/Aq1.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+</section>

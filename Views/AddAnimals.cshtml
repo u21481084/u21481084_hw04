@@ -1,0 +1,38 @@
+﻿@model HW04.Models.Animals
+
+@{
+    ViewBag.Title = "AddAnimals";
+}
+
+<h2>AddAnimals</h2>
+
+@using (Html.BeginForm("Animals", "Home", FormMethod.Post))
+{
+    <label for="id">Enter Animal ID</label>
+    <input type="text" name="id" id="id" />
+    <br />
+    <label for="type">Select Animal type</label>
+    <select name="type" id="type">
+        <option value="Mammals">Mammals</option>
+        <option value="Fish">Fish</option>
+        <option value="Reptiles">Reptiles</option>
+    </select>
+    <br />
+    <label for="animalname">Enter Animal Name</label>
+    <input type="text" name="animalname" id="animalname" />
+    <br />
+    <label for="hab">Enter Animal Habitat</label>
+    <input type="text" name="hab" id="hab" />
+    <br />
+    <label for="food">Enter Animal Diet</label>
+    <input type="text" name="food" id="food" />
+    <br />
+    <label for="x">Number of animals</label>
+    <input type="number" name="x" id="x" />
+    <br />
+    <label for="status">Enter Animal Status</label>
+    <input type="text" name="status" id="status" />
+    <br />
+
+    <button type="submit" class="name noselect">Add Animal</button>
+}
